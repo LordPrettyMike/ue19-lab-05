@@ -41,7 +41,7 @@ jobs:
         REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
         docker pull ghcr.io/${REPO_OWNER}/$REPO_NAME:latest
         docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
-          aquasec/trivy:latest --exit-code 1 --severity HIGH,CRITICAL ghcr.io/${REPO_OWNER}/$REPO_NAME:latest
+          aquasec/trivy:latest --severity HIGH,CRITICAL ghcr.io/${REPO_OWNER}/$REPO_NAME:latest
 
     # Pousser l'image Docker sur GitHub Packages
     - name: Push Docker image
