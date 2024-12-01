@@ -13,6 +13,7 @@ jobs:
       packages: write
       attestations: write
       id-token: write
+      security-events: write
 
     steps:
     # Vérifier le dépôt
